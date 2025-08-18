@@ -79,7 +79,7 @@ with unreal.ScopedSlowTask(1, "Convert MorphTarget") as slow_task_root:
     key = unreal.RigElementKey(unreal.RigElementType.NULL, 'MorphControlRoot_s')
     space = hierarchy.find_null(key)
     if (space.get_editor_property('index') < 0):
-        space = h_con.add_null('MorphControlRoot_s', space_type=unreal.RigSpaceType.SPACE)
+        space = h_con.add_null('MorphControlRoot_s', parent= unreal.RigElementKey(), transform= unreal.Transform())
     else:
         space = key
 
