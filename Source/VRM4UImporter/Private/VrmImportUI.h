@@ -68,7 +68,7 @@ public:
 
 	/** Remove RootBone Rotation */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, AdvancedDisplay, Category = Mesh, meta = (ImportType = "StaticMesh|SkeletalMesh", DisplayName = "Remove RootBone Rotation"))
-	bool bRemoveRootBoneRotation = true;
+	bool bRemoveRootBoneRotation = false;
 
 	/** Remove RootBone Position */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, AdvancedDisplay, Category = Mesh, meta = (ImportType = "StaticMesh|SkeletalMesh", DisplayName = "Remove RootBone Position"))
@@ -87,7 +87,7 @@ public:
 
 	/** Force Original Bone Name */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, AdvancedDisplay, Category = Mesh, meta = (ImportType = "StaticMesh|SkeletalMesh", DisplayName = "Force original bone name"))
-	bool bForceOriginalBoneName = false;
+	bool bForceOriginalBoneName = true;
 
 		/** Duplicate mesh and renamed humanoid bone */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, AdvancedDisplay, Category = Mesh, meta = (ImportType = "StaticMesh|SkeletalMesh", DisplayName="Generate renamed humanoid mesh"))
@@ -158,7 +158,7 @@ public:
 
 	/** Merge material using same parameter */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, AdvancedDisplay, Category = Mesh, meta = (ImportType = "StaticMesh|SkeletalMesh", DisplayName="[Optimize] Merge material"))
-	bool bMergeMaterial = true;
+	bool bMergeMaterial = false;
 
 	/** Merge primitives using same material */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, AdvancedDisplay, Category = Mesh, meta = (ImportType = "StaticMesh|SkeletalMesh", DisplayName = "[Optimize] Merge primitive"))

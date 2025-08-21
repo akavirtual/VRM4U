@@ -333,6 +333,12 @@ void VRMSkeleton::readVrmBone(aiScene* scene, int& boneOffset, FReferenceSkeleto
 
 					FTransform localpose;
 					localpose.SetFromMatrix(m);
+					FVector localT = localpose.GetTranslation();
+					
+					if (nodeNo == 0) {
+						localpose.SetRotation(FQuat::MakeFromRotator(FRotator(0.0f, 0.0f, 90.0f)));
+					}
+					localpose.SetTranslation(FVector(localT.X, -localT.Z, localT.Y));
 
 					FTransform localpose_Identity = localpose;
 

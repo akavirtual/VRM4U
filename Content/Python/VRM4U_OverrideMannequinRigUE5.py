@@ -74,9 +74,10 @@ with unreal.ScopedSlowTask(1, "Convert Bone") as slow_task_root:
 
     with unreal.ScopedSlowTask(1, "Replace Bone") as slow_task:
         slow_task.make_dialog()
-        while(len(hierarchy.get_bones()) > 0):
-            e = hierarchy.get_bones()[-1]
-            h_con.remove_all_parents(e)
+        bones_to_remove = hierarchy.get_bones()
+        slow_task.enter_progress_frame(len(bones_to_remove))
+        for bone_element in reversed(bones_to_remove):
+            h_con.remove_element(bone_element, reparent_children=False, setup_undo=False)
         h_con.import_bones(unreal.ControlRigBlueprintLibrary.get_preview_mesh(rig).skeleton)
 
     ##
